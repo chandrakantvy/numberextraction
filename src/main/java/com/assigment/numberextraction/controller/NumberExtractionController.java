@@ -22,7 +22,7 @@ public class NumberExtractionController {
 	@Autowired
 	ExtractNumberService extractNumberService;
 	
-	@PostMapping("/extract")
+	@PostMapping("/numbers")
 	public Response extractNumbers(@RequestBody Request request) {
 		logger.info("Extracting Numbers from text...");
 		Response response = extractNumberService.extractNumbers(request);

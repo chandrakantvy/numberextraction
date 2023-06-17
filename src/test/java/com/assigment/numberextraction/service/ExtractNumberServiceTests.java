@@ -129,13 +129,13 @@ public class ExtractNumberServiceTests {
 	
 	@Test
 	public void countPeriodsTest1() {
-		int actualPeriodCount = extractNumberService.countPeriods("123.5.6", '.');
+		int actualPeriodCount = extractNumberService.countChar("123.5.6", '.');
 		assertEquals(2, actualPeriodCount);
 	}
 	
 	@Test
 	public void countPeriodsTest2() {
-		int actualPeriodCount = extractNumberService.countPeriods("123,6", '.');
+		int actualPeriodCount = extractNumberService.countChar("123,6", '.');
 		assertEquals(0, actualPeriodCount);
 	}
 

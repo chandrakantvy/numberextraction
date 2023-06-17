@@ -55,7 +55,7 @@ public class ExtractNumberService {
 
             String subSequence = text.substring(firstDigitPosition, lastDigitPosition+1);
             
-            int periodCount = countPeriods(subSequence, '.');
+            int periodCount = countChar(subSequence, '.');
             
             String[] splitedStringsOnPeriod;
             
@@ -97,17 +97,17 @@ public class ExtractNumberService {
 	}
 	
         
-    int countPeriods(String input, char target) {
+    int countChar(String input, char target) {
     	
-        int periodCount = 0;
+        int charCount = 0;
 
         for (char ch : input.toCharArray()) {
             if (ch == target) {
-            	periodCount++;
+            	charCount++;
             }
         }
 
-        return periodCount;
+        return charCount;
     }	
 	
 }

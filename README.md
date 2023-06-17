@@ -4,4 +4,4 @@
 * if there are negative numbers then only number will be extracted not sign
 
 # EndPoint
-* /api/extract
+* /api/numbers
