@@ -46,10 +46,10 @@ public class ExtractNumberServiceTests {
 		Response actualResponse = extractNumberService.extractNumbers(request);
 		
 		ExtractedNumber extractedNumber1 = new ExtractedNumber("70.5", 70.5, 22, 26);
-        ExtractedNumber extractedNumber2 = new ExtractedNumber("71.5", 71.5, 27, 31);
-        List<ExtractedNumber> extractedNumbers = new ArrayList<>();
-        extractedNumbers.add(extractedNumber1);
-        extractedNumbers.add(extractedNumber2);
+        	ExtractedNumber extractedNumber2 = new ExtractedNumber("71.5", 71.5, 27, 31);
+        	List<ExtractedNumber> extractedNumbers = new ArrayList<>();
+        	extractedNumbers.add(extractedNumber1);
+        	extractedNumbers.add(extractedNumber2);
         
 		Response expectedResponse = new Response("test2", extractedNumbers);
 		assertEquals(expectedResponse.getId(), actualResponse.getId());
@@ -65,8 +65,8 @@ public class ExtractNumberServiceTests {
 		Response actualResponse = extractNumberService.extractNumbers(request);
 		
 		ExtractedNumber extractedNumber1 = new ExtractedNumber("", 0, 0, 0);
-        List<ExtractedNumber> extractedNumbers = new ArrayList<>();
-        extractedNumbers.add(extractedNumber1);        
+        	List<ExtractedNumber> extractedNumbers = new ArrayList<>();
+        	extractedNumbers.add(extractedNumber1);        
         
 		Response expectedResponse = new Response("test3", extractedNumbers);
 		assertEquals(expectedResponse.getId(), actualResponse.getId());
@@ -82,8 +82,8 @@ public class ExtractNumberServiceTests {
 		Response actualResponse = extractNumberService.extractNumbers(request);
 		
 		ExtractedNumber extractedNumber1 = new ExtractedNumber("", 0, 0, 0);
-        List<ExtractedNumber> extractedNumbers = new ArrayList<>();
-        extractedNumbers.add(extractedNumber1);
+        	List<ExtractedNumber> extractedNumbers = new ArrayList<>();
+        	extractedNumbers.add(extractedNumber1);
 		Response expectedResponse = new Response("test4", extractedNumbers);
 		assertEquals(expectedResponse.getId(), actualResponse.getId());
 		assertEquals(0, actualResponse.getExtractedNumbers().size());
@@ -96,11 +96,11 @@ public class ExtractNumberServiceTests {
 		Request request = new Request("test5", text);
 		Response actualResponse = extractNumberService.extractNumbers(request);
 		
-		ExtractedNumber extractedNumber1 = new ExtractedNumber("75",Long.parseLong("70"), 9, 10);
-		ExtractedNumber extractedNumber2 = new ExtractedNumber("199.8", 199.8, 21, 25);
-        List<ExtractedNumber> extractedNumbers = new ArrayList<>();
-        extractedNumbers.add(extractedNumber1);
-        extractedNumbers.add(extractedNumber2);
+		ExtractedNumber extractedNumber1 = new ExtractedNumber("75",Long.parseLong("75"), 9, 11);
+		ExtractedNumber extractedNumber2 = new ExtractedNumber("199.8", 199.8, 21, 26);
+        	List<ExtractedNumber> extractedNumbers = new ArrayList<>();
+        	extractedNumbers.add(extractedNumber1);
+        	extractedNumbers.add(extractedNumber2);
 		Response expectedResponse = new Response("test5", extractedNumbers);
 		assertEquals(expectedResponse.getId(), actualResponse.getId());
 		assertEquals(2, actualResponse.getExtractedNumbers().size());
@@ -108,21 +108,21 @@ public class ExtractNumberServiceTests {
 	
 	@Test
 	public void extractNumbers6() {
-		String text = "my ip address is 192.168.01.01";
+		String text = "my ip address is 192.168.1.1";
 		Request request = new Request("test6", text);
 		Response actualResponse = extractNumberService.extractNumbers(request);
 		
-		ExtractedNumber extractedNumber1 = new ExtractedNumber("192",Long.parseLong("192"), 17, 19);
-		ExtractedNumber extractedNumber2 = new ExtractedNumber("168", Long.parseLong("168"), 21, 23);
-		ExtractedNumber extractedNumber3 = new ExtractedNumber("01",Long.parseLong("01") , 25, 26);
-		ExtractedNumber extractedNumber4 = new ExtractedNumber("01", Long.parseLong("01"), 28, 29);
-        List<ExtractedNumber> extractedNumbers = new ArrayList<>();
-        extractedNumbers.add(extractedNumber1);
-        extractedNumbers.add(extractedNumber2);
-        extractedNumbers.add(extractedNumber3);
-        extractedNumbers.add(extractedNumber4);
+		ExtractedNumber extractedNumber1 = new ExtractedNumber("192",Long.parseLong("192"), 17, 20);
+		ExtractedNumber extractedNumber2 = new ExtractedNumber("168", Long.parseLong("168"), 21, 24);
+		ExtractedNumber extractedNumber3 = new ExtractedNumber("1",Long.parseLong("1") , 25, 26);
+		ExtractedNumber extractedNumber4 = new ExtractedNumber("1", Long.parseLong("1"), 27, 28);
+        	List<ExtractedNumber> extractedNumbers = new ArrayList<>();
+        	extractedNumbers.add(extractedNumber1);
+        	extractedNumbers.add(extractedNumber2);
+        	extractedNumbers.add(extractedNumber3);
+        	extractedNumbers.add(extractedNumber4);
 
-        Response expectedResponse = new Response("test6", extractedNumbers);
+        	Response expectedResponse = new Response("test6", extractedNumbers);
 		assertEquals(expectedResponse.getId(), actualResponse.getId());
 		assertEquals(4, actualResponse.getExtractedNumbers().size());
 	}
